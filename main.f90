@@ -12,7 +12,6 @@ program main
   real(8),dimension(0:7,0:1,0:1,1,0:1200) :: Afs,TempAfs
   real(8),dimension(0:7,0:1,0:1,0:1,0:1200) :: Bfs
   integer :: I,J,ITime,IA,IB,NT,ITe
-  character(len=3) :: CComp
   character(len=2) :: CTe
   character(len=100) :: Filename
 
@@ -43,9 +42,6 @@ program main
     NT=1200
 
     write(CTe,'(I2.2)') ITe*2+26
-    CComp="c"
-    if (IA==1) CComp = trim(CComp)//"a"
-    if (IB==1) CComp = trim(CComp)//"b"
 
     open(10,file="phos"//CTe//"c.dat",status="unknown")
     do ITime=0,NT
